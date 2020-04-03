@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<script>
-function loadXMLDoc()
-{
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	{
-		xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	<meta charset="utf-8">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		function loadXMLDoc() {
+			$.ajax({
+				type: "GET", //请求方式
+				url: "https://cnodejs.org/api/v1/topics", //地址，就是json文件的请求路径
+				dataType: "json", //数据类型可以为 text xml json  script  jsonp
+				success: function (re) { //返回的参数就是 action里面所有的有get和set方法的参数
+					console.log(re.data)
+				}
+			})
 		}
-	}
-	xmlhttp.open("GET","https://jhv000.github.io/ajax/data.txt",true);
-	xmlhttp.send();
-}
-</script>
+	</script>
 </head>
+
 <body>
 
-<div id="myDiv"><h2>这里展示内容</h2></div>
-<button type="button" onclick="loadXMLDoc()">点击更新内容</button>
+	<div id="myDiv">
+		<h2>这里展示内容</h2>
+	</div>
+	<button type="button" onclick="loadXMLDoc()">点击更新内容</button>
 
 </body>
+
 </html>
