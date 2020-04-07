@@ -331,8 +331,12 @@ ul li {
 .c-intros {
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 115px;
   bottom: 0;
   z-index: 100;
   background: rgba(138, 135, 135, 0.6);
+}
+#c-name {
+  font-weight: 700;
+  font-size: 20px;
 }

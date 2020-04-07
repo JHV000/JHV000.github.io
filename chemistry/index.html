@@ -93,9 +93,9 @@
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
             <div class="c-intros">
-                <p id="c-name">name</p>
-                <p id="c-fenzishi">name</p>
-                <p id="c-intro">name</p>
+                <p id="c-name">正硅酸乙脂</p>
+                <p id="c-fenzishi">C8H20O4S i</p>
+                <p id="c-intro">正硅酸乙酯是无色液体，稍有气味。熔点 -77℃，沸点165~169℃。微溶于水，溶于乙醇、乙醚。在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。易燃。</p>
             </div>
 
         </div>
@@ -225,6 +225,11 @@
         var name,fenzishi,intro;
         var xmlDoc = xml.responseXML;
         var x = xmlDoc.getElementsByTagName("thing");
+        if(num==10){
+            document.getElementById("c-name").innerHTML = '正硅酸乙脂';
+        document.getElementById("c-fenzishi").innerHTML = 'C8H20O4S i';
+        document.getElementById("c-intro").innerHTML = '正硅酸乙酯是无色液体，稍有气味。熔点 -77℃，沸点165~169℃。微溶于水，溶于乙醇、乙醚。在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。易燃。'; 
+        }
         this.name =x[num-1].getElementsByTagName("name")[0].childNodes[0].nodeValue;
         this.fenzishi =x[num-1].getElementsByTagName("fenzishi")[0].childNodes[0].nodeValue;
         this.intro =x[num-1].getElementsByTagName("intro")[0].childNodes[0].nodeValue;
