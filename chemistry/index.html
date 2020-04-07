@@ -93,9 +93,9 @@
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
             <div class="c-intros">
-                <p class="c-name">name</p>
-                <p class="c-fenzi">name</p>
-                <p class="c-intro">name</p>
+                <p id="c-name">name</p>
+                <p id="c-fenzishi">name</p>
+                <p id="c-intro">name</p>
             </div>
 
         </div>
@@ -209,41 +209,29 @@
     <div id="mask" onclick="out()"></div>
 </body>
 <script>
-    function loadXMLDoc() {
+    function loadXMLDoc(num) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                myFunction(this);
+                myFunction(this,num);
             }
         };
-        xhttp.open("GET", "data.xml", true);
+        xhttp.open("GET", "https://jhv000.github.io/chemistry/data.xml", true);
         xhttp.send();
     }
 
-    function myFunction(xml) {
+    function myFunction(xml,num) {
         var i;
-        var name;
+        var name,fenzishi,intro;
         var xmlDoc = xml.responseXML;
         var x = xmlDoc.getElementsByTagName("thing");
-        for (i = 0; i < x.length; i++) {
-           
-            this.name =    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-                console.log(this.name)
-        }
-        
+        this.name =x[num-1].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        this.fenzishi =x[num-1].getElementsByTagName("fenzishi")[0].childNodes[0].nodeValue;
+        this.intro =x[num-1].getElementsByTagName("intro")[0].childNodes[0].nodeValue;
+        document.getElementById("c-name").innerHTML = this.name;
+        document.getElementById("c-fenzishi").innerHTML = this.fenzishi;
+        document.getElementById("c-intro").innerHTML = this.intro; 
     }
-    var index;
-    var arr = [{
-            name: '正硅酸乙酯',
-            fenzishi: 'C8H20O4S i',
-            intro: '正硅酸乙酯是无色液体，稍有气味。熔点 -77℃，沸点165~169℃。微溶于水，溶于乙醇、乙醚。在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。易燃。高浓度时有麻醉性。有刺激性。'
-        },
-        {
-            name: '溴酸钾',
-            fenzishi: 'KBrO3',
-            intro: '溴酸钾是一种无机盐，室温下为无色晶体，分子式为KBrO3。溴酸钾，主要用作分析试剂、氧化剂、食品添加剂（中国现已禁用）、羊毛漂白处理剂。本品对眼睛、皮肤、粘膜有刺激性。'
-        }
-    ];
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'horizontal', // 垂直切换选项
         loop: true, // 循环模式选项
@@ -266,10 +254,8 @@
         }
     })
     mySwiper.on('slideChangeTransitionEnd', function () {
-        this.index = mySwiper.activeIndex;
-        window.loadXMLDoc();
-        console.log(this.index)
-
+        window.loadXMLDoc(mySwiper.activeIndex);
+        console.log(mySwiper.activeIndex)
     });
 </script>
 
