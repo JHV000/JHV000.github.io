@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chemistrystroe>
+<thing>
+<name>正硅酸乙脂</name>
+<fenzishi>C8H20O4S i</fenzishi>
+<intro>正硅酸乙酯是无色液体，稍有气味。熔点 -77℃，沸点165~169℃。微溶于水，溶于乙醇、乙醚。在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。易燃。高浓度时有麻醉性。有刺激性。</intro>
+</thing>
+
+<thing>
+<name>溴酸钾</name>
+<fenzishi>KBrO3</fenzishi>
+<intro>溴酸钾是一种无机盐，室温下为无色晶体，分子式为KBrO3。溴酸钾，主要用作分析试剂、氧化剂、食品添加剂（中国现已禁用）、羊毛漂白处理剂。本品对眼睛、皮肤、粘膜有刺激性。</intro>
+</thing>
+
+<thing>
+<name>苯甲酸钠</name>
+<fenzishi>C7H5NaO2</fenzishi>
+<intro>苯甲酸钠(sodium benzoic)是一种白色颗粒或晶体粉末，无臭或微带安息香气味，味微甜，有收敛味。也称安息香酸钠，相对分子质量144.12。在空气中稳定，易溶于水，其水溶液的PH 值为8，溶于乙醇。</intro>
+</thing>
+
+<thing>
+<name>乙酸</name>
+<fenzishi>CH3COOH</fenzishi>
+<intro>乙酸，也叫醋酸（36%--38%）、冰醋酸（98%），化学式CH3COOH，是一种有机一元酸，为食醋主要成分。纯的无水乙酸（冰醋酸）是无色的吸湿性固体，凝固点为16.6℃（62℉），凝固后为无色晶体，其水溶液中呈弱酸性且蚀性强，蒸汽对眼和鼻有刺激性作用。</intro>
+</thing>
+
+
+<thing>
+<name>聚乙烯醇</name>
+<fenzishi>[C2H4O]n</fenzishi>
+<intro>聚乙烯醇：有机化合物，白色片状、絮状或粉末状固体，无味。溶于水(95℃以上），微溶于二甲基亚砜，不溶于汽油、煤油、植物油、苯、甲苯、二氯乙烷、四氯化碳、丙酮、醋酸乙酯、甲醇、乙二醇等。</intro>
+</thing>
+
+<thing>
+<name>碳酸钾</name>
+<fenzishi>K2CO3</fenzishi>
+<intro>碳酸钾，白色结晶粉末。密度2.428g/cm3。熔点891℃，沸点时分解，相对分子量138.21。溶于水，水溶液呈碱性，不溶于乙醇、丙酮和乙醚。</intro>
+</thing>
+
+<thing>
+<name>1,2-丙二醇 </name>
+<fenzishi>C3H8O2</fenzishi>
+<intro>1,2-丙二醇为一种化学试剂，与水、乙醇及多种有机溶剂混溶, 其化学式为 C3H8O2。常态下为无色粘稠液体，近乎无味，细闻微甜。丙二醇可用作不饱和聚酯树脂的原料.在化妆品、牙膏和香皂中可与甘油或山梨醇配合用作润湿剂。</intro>
+</thing>
+
+<thing>
+<name>氢氧化钡</name>
+<fenzishi>Ba(OH)₂</fenzishi>
+<intro>无色透明结晶或白色粉末。在硫酸干燥器中能失去7分子结晶水，约在78℃失去全部结晶水。可溶于水、甲醇，微溶于乙醇，几乎难溶于丙酮。</intro>
+</thing>
+
+<thing>
+<name>异氰酸酯</name>
+<fenzishi></fenzishi>
+<intro>异氰酸酯是异氰酸的各种酯的总称。若以－NCO基团的数量分类，包括单异氰酸酯R－N=C=O和二异氰酸酯O=C=N－R－N=C=O及多异氰酸酯等。</intro>
+</thing>
+
+<thing>
+<name>酚醛树脂</name>
+<fenzishi>C7H6O2</fenzishi>
+<intro>酚醛树脂也叫电木，又称电木粉。原为无色或黄褐色透明物，市场销售往往加着色剂而呈红、黄、黑、绿、棕、蓝等颜色，有颗粒、粉末状。</intro>
+</thing>
+
+<thing>
+<name>环氧树脂</name>
+<fenzishi>Ba(OH)₂</fenzishi>
+<intro>环氧树脂是指分子中含有两个以上环氧基团的一类聚合物的总称。它是环氧氯丙烷与双酚A或多元醇的缩聚产物。由于环氧基的化学活性，可用多种含有活泼氢的化合物使其开环，固化交联生成网状结构，因此它是一种热固性树脂。</intro>
+</thing>
+</chemistrystroe>

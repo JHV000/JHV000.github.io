@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <script src="./js/swiper.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script src="./js/main.js"></script>
 </head>
 
@@ -74,7 +75,7 @@
     <div class="banner">
         <div class="forms">
             <p onclick="showG()">供应申请</p>
-            <p onclick="showX">需求申请</p>
+            <p onclick="showX()">需求申请</p>
             <p>成交数额</p>
         </div>
         <div class="swiper-container">
@@ -91,7 +92,11 @@
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
-
+            <div class="c-intros">
+                <p class="c-name">name</p>
+                <p class="c-fenzi">name</p>
+                <p class="c-intro">name</p>
+            </div>
 
         </div>
     </div>
@@ -155,21 +160,48 @@
     <div id="alertG">
         <form action="">
             <div class="intro">
-            <p class="formname">化学品再分配平台需求申请表</p>
-            <p>请需要本公益服务平台提供可再分配剩余化学品的顾客在注册</p>
-            <p>本平台账号后，认真填写下表信息，让我们一起携手利用好化学品！</p>
-        </div>
-        <div class="content">
-            <p class="type">需求者信息</p>
-            <span>供应者姓名:</span></input><input type="text">需求者职位:<input type="text">
-            <br>
-            <span>需求者单位:</span><input type="text"><span>需求者单位电话:</span><input type="text">
-            <p class="type">需求化学品信息</p>
-            <span>化学品名称:</span><input type="text"><span>需求量:</span><input type="text">
-            <br>
-            <span>化学品纯度:</span><input type="text">
-            <span>相关部门备案材料:</span></input><input type="text">
-        </div>
+                <p class="formname">化学品再分配平台供用申请表</p>
+                <p>请需要本公益服务平台提供可再分配剩余化学品的顾客在注册</p>
+                <p>本平台账号后，认真填写下表信息，让我们一起携手利用好化学品！</p>
+            </div>
+            <div class="content">
+                <p class="type">供用者信息</p>
+                <span>供应者姓名:</span></input><input type="text"><span>供用者职位:</span><input type="text">
+                <br>
+                <span>供用者单位:</span><input type="text"><span>供用者单位电话:</span><input type="text">
+                <br>
+                <span>供应者地址:</span></input><input type="text"><span>供用者联系方式:</span><input type="text">
+                <p class="type">供用化学品信息</p>
+                <span>化学品名称:</span><input type="text"><span>需求量:</span><input type="text">
+                <br>
+                <span>化学品纯度:</span><input type="text"><span>化学生产日期:</span><input type="text">
+                <br>
+                <span>相关部门备案材料:</span></input><input type="text">
+            </div>
+
+            <input type="submit" value="提交" class="btn">
+        </form>
+    </div>
+
+    <div id="alertX">
+        <form action="">
+            <div class="intro">
+                <p class="formname">化学品再分配平台需求申请表</p>
+                <p>请需要本公益服务平台提供可再分配剩余化学品的顾客在注册</p>
+                <p>本平台账号后，认真填写下表信息，让我们一起携手利用好化学品！</p>
+            </div>
+            <div class="content">
+                <p class="type">需求者信息</p>
+                <span>需求者姓名:</span></input><input type="text"><span>需求者职位:</span><input type="text">
+                <br>
+                <span>需求者单位:</span><input type="text"><span>需求者单位电话:</span><input type="text">
+                <p class="type">需求化学品信息</p>
+                <span>化学品名称:</span><input type="text"><span>需求量:</span><input type="text">
+                <br>
+                <span>化学品纯度:</span><input type="text">
+                <br>
+                <span>相关部门备案材料:</span></input><input type="text">
+            </div>
 
             <input type="submit" value="提交" class="btn">
         </form>
@@ -177,6 +209,41 @@
     <div id="mask" onclick="out()"></div>
 </body>
 <script>
+    function loadXMLDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "data.xml", true);
+        xhttp.send();
+    }
+
+    function myFunction(xml) {
+        var i;
+        var name;
+        var xmlDoc = xml.responseXML;
+        var x = xmlDoc.getElementsByTagName("thing");
+        for (i = 0; i < x.length; i++) {
+           
+            this.name =    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                console.log(this.name)
+        }
+        
+    }
+    var index;
+    var arr = [{
+            name: '正硅酸乙酯',
+            fenzishi: 'C8H20O4S i',
+            intro: '正硅酸乙酯是无色液体，稍有气味。熔点 -77℃，沸点165~169℃。微溶于水，溶于乙醇、乙醚。在潮湿空气中逐渐混浊、静置后析出硅酸沉淀。无水分存在时稳定，蒸馏时不分解。能与乙醇和乙醚混溶，微溶于苯，几乎不溶于水，但能逐渐被水分解成氧化硅。易燃。高浓度时有麻醉性。有刺激性。'
+        },
+        {
+            name: '溴酸钾',
+            fenzishi: 'KBrO3',
+            intro: '溴酸钾是一种无机盐，室温下为无色晶体，分子式为KBrO3。溴酸钾，主要用作分析试剂、氧化剂、食品添加剂（中国现已禁用）、羊毛漂白处理剂。本品对眼睛、皮肤、粘膜有刺激性。'
+        }
+    ];
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'horizontal', // 垂直切换选项
         loop: true, // 循环模式选项
@@ -196,8 +263,14 @@
         // 如果需要滚动条
         scrollbar: {
             el: '.swiper-scrollbar',
-        },
+        }
     })
+    mySwiper.on('slideChangeTransitionEnd', function () {
+        this.index = mySwiper.activeIndex;
+        window.loadXMLDoc();
+        console.log(this.index)
+
+    });
 </script>
 
 </html>
